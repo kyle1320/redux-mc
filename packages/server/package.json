@@ -1,0 +1,18 @@
+{
+  "name": "@redux-mc/server",
+  "version": "0.0.1",
+  "description": "Server-side logic for Redux MC",
+  "main": "lib/index.js",
+  "author": "https://github.com/kyle1320",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "typescript": "^5.1.6"
+  },
+  "dependencies": {
+    "@redux-mc/util": "^0.0.1",
+    "redux": "^4.2.1"
+  }
+}
