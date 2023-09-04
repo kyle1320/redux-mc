@@ -1,10 +1,21 @@
 {
   "name": "@redux-mc/client",
   "version": "0.0.1",
-  "description": "Client-side logic for Redux MC",
+  "description": "Client-side utilities for Redux MC",
   "main": "lib/index.js",
   "author": "https://github.com/kyle1320",
   "license": "MIT",
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kyle1320/redux-mc.git",
+    "directory": "packages/client"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "tsc"
   },
