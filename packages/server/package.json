@@ -17,7 +17,9 @@
     "access": "public"
   },
   "scripts": {
-    "build": "tsc"
+    "clean": "rimraf lib *.tsbuildinfo",
+    "build": "tsc --project tsconfig.prod.json",
+    "watch": "tsc --build --watch"
   },
   "devDependencies": {
     "typescript": "^5.1.6"

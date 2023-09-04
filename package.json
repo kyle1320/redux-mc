@@ -5,14 +5,17 @@
   "author": "https://github.com/kyle1320",
   "license": "MIT",
   "workspaces": [
-    "packages/*",
+    "packages/util",
+    "packages/client",
+    "packages/server",
     "samples/*"
   ],
   "scripts": {
-    "build": "tsc --build",
+    "clean": "npm run --ws clean",
+    "build": "npm run clean && npm run --ws build",
     "watch": "tsc --build --watch",
-    "publish:canary": "lerna publish --canary",
-    "publish:prod": "lerna publish"
+    "publish:canary": "npm run build && lerna publish --canary",
+    "publish:prod": "npm run build && lerna publish"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^6.6.0",
@@ -22,6 +25,7 @@
     "eslint-plugin-prettier": "^5.0.0",
     "lerna": "^7.2.0",
     "prettier": "^3.0.3",
+    "rimraf": "^5.0.1",
     "typescript": "^5.2.2"
   }
 }
