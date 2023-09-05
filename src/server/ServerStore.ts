@@ -9,8 +9,8 @@ import {
   SpecActions,
   clientSpecificActionKinds,
   clientToServerAllowedActionKinds
-} from "@redux-mc/util";
-import { metaActions } from "@redux-mc/util/lib/meta";
+} from "../util";
+import { metaActions } from "../util/meta";
 import { Store, applyMiddleware, legacy_createStore } from "redux";
 import {
   ServerStoreInternalAction,

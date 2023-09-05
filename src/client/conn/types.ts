@@ -1,4 +1,4 @@
-import { Action, IApplicationSpec } from "@redux-mc/util";
+import { Action, IApplicationSpec } from "../../util";
 import { ClientStore } from "../ClientStore";
 
 export interface IServerConnection<TSpec extends IApplicationSpec> {

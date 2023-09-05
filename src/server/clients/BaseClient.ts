@@ -1,5 +1,5 @@
-import { Action, IApplicationSpec } from "@redux-mc/util";
-import { metaActions } from "@redux-mc/util/lib/meta";
+import { Action, IApplicationSpec } from "../../util";
+import { metaActions } from "../../util/meta";
 
 import { IClient } from "./types";
 import { ServerStore } from "../ServerStore";

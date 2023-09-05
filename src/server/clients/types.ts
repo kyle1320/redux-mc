@@ -1,4 +1,4 @@
-import { Action } from "@redux-mc/util";
+import { Action } from "../../util";
 
 export interface IClient {
   readonly id: string;

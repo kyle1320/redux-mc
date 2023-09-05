@@ -1,5 +1,5 @@
-import { Action, IApplicationSpec, ServerStoreAction } from "@redux-mc/util";
-import { MetaAction } from "@redux-mc/util/lib/meta";
+import { Action, IApplicationSpec, ServerStoreAction } from "../util";
+import { MetaAction } from "../util/meta";
 import { IClient } from "./clients";
 
 export type ServerStoreInternalAction<TSpec extends IApplicationSpec> = ServerStoreAction<TSpec> | MetaAction;

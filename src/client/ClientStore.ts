@@ -6,8 +6,8 @@ import {
   IApplicationSpec,
   Reducer,
   clientAppAllowedActionKinds
-} from "@redux-mc/util";
-import { MetaAction, metaActions } from "@redux-mc/util/lib/meta";
+} from "../util";
+import { MetaAction, metaActions } from "../util/meta";
 import { Store, applyMiddleware, legacy_createStore } from "redux";
 import { ClientStoreInternalAction } from "./types";
 import { serverMirroringMiddleware } from "./middlewares/serverMirroringMiddleware";

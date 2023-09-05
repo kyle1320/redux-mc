@@ -1,4 +1,4 @@
-import { Action, IApplicationSpec } from "@redux-mc/util";
+import { Action, IApplicationSpec } from "../../util";
 
 import { ServerStore } from "../ServerStore";
 import { BaseClient } from "./BaseClient";

@@ -1,5 +1,5 @@
-import { IApplicationSpec, ClientStoreState, Action } from "@redux-mc/util";
-import { metaActions } from "@redux-mc/util/lib/meta";
+import { IApplicationSpec, ClientStoreState, Action } from "../../util";
+import { metaActions } from "../../util/meta";
 import { ClientStore } from "../ClientStore";
 import { Dispatch, Middleware as ReduxMiddleware } from "redux";
 import { ClientStoreInternalAction } from "../types";

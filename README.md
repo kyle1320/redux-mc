@@ -62,6 +62,8 @@ For example, in our card game, after a player draws a card and an `L2` action is
 
 ## How to use
 
+`npm install redux-mc`
+
 (TODO) See the `samples` directory for example applications.
 
 Redux MC is designed to allow code reuse across the client and server.
@@ -69,8 +71,6 @@ Redux MC is designed to allow code reuse across the client and server.
 In a typical Redux MC application, shared code specifies the store logic. This includes all reducers, actions, and initial state. Middlewares differ across server and client.
 
 ### In the client
-
-`npm install @redux-mc/client`
 
 Applications should extend the `ClientStore` base class. The following fields must be overridden:
 
@@ -88,7 +88,7 @@ The client can be connected to the server via the `connect()` method. The method
 The redux store can be accessed via the `store` property for use in the client application.
 
 ```typescript
-import { ClientStore, WebSocketConnection } from "@redux-mc/client";
+import { ClientStore, WebSocketConnection } from "redux-mc/client";
 
 class MyAppClient extends ClientStore {
   // ...
@@ -102,8 +102,6 @@ const store = client.store;
 ```
 
 ### In the server
-
-`npm install @redux-mc/server`
 
 Applications should extend the `ServerStore` base class. The following fields must be overridden:
 
@@ -121,7 +119,7 @@ Note that, in the server, the store should not be accessed directly. Actions sho
 Clients can be connected to the server via the `addClient` method (and removed via `removeClient`). This is done automatically by the `WebSocketClient`. But applications can also extend the `BaseClient` class to implement their own clients. This is useful for implementing non-human clients such as chat bots or AI players.
 
 ```typescript
-import { ServerStore, WebSocketClient } from "@redux-mc/server";
+import { ServerStore, WebSocketClient } from "redux-mc/server";
 
 class MyAppServer extends ServerStore {
   // ...
@@ -135,12 +133,12 @@ new WebSocketClient(ws, server, id);
 
 ### Action helpers
 
-Redux MC provides helpers for creating actions with `kind`s. These are available from the `@redux-mc/util` package.
+Redux MC provides helpers for creating actions with `kind`s. These are available under `redux-mc/util`.
 
 `create<Kind>Action(type)()`: constructs an action creator. For example (With TypeScript typings):
 
 ```typescript
-import { createL2Action } from "@redux-mc/util";
+import { createL2Action } from "redux-mc/util";
 
 const myAction = createL2Action("myAction")<MyPayloadType>();
 const action = myAction(/* MyPayloadType contents here */);

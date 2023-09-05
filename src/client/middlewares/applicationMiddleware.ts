@@ -1,4 +1,4 @@
-import { ClientStoreState, IApplicationSpec } from "@redux-mc/util";
+import { ClientStoreState, IApplicationSpec } from "../../util";
 import { ClientStore } from "../ClientStore";
 import { Dispatch, Middleware as ReduxMiddleware } from "redux";
 import { ClientStoreInternalAction } from "../types";

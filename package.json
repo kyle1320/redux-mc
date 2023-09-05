@@ -1,18 +1,26 @@
 {
   "name": "redux-mc",
-  "private": true,
   "description": "Redux state management for multi-client applications",
   "author": "https://github.com/kyle1320",
   "license": "MIT",
-  "workspaces": [
-    "packages/util",
-    "packages/client",
-    "packages/server",
-    "samples/*"
+  "files": [
+    "lib"
   ],
+  "exports": {
+    "./client": "./lib/client/index.js",
+    "./server": "./lib/server/index.js",
+    "./util": "./lib/util/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kyle1320/redux-mc.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
-    "clean": "npm run --ws clean",
-    "build": "npm run clean && npm run --ws build",
+    "clean": "rimraf lib *.tsbuildinfo",
+    "build": "npm run clean && tsc --project tsconfig.prod.json",
     "watch": "tsc --build --watch",
     "lint": "eslint .",
     "format": "prettier . --write",
@@ -29,5 +37,8 @@
     "prettier": "^3.0.3",
     "rimraf": "^5.0.1",
     "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "redux": "^4.2.1"
   }
 }

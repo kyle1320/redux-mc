@@ -1,4 +1,7 @@
 {
-  "files": [],
-  "references": [{ "path": "./packages/util" }, { "path": "./packages/client" }, { "path": "./packages/server" }]
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "incremental": true,
+    "sourceMap": true
+  }
 }
