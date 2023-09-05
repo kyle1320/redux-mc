@@ -11,7 +11,7 @@ import { ClientStoreInternalAction } from "../types";
 export function serverMirroringMiddleware<TSpec extends IApplicationSpec>(
   clientStore: ClientStore<TSpec>
 ): ReduxMiddleware<never, ClientStoreState<TSpec>, Dispatch<ClientStoreInternalAction<TSpec>>> {
-  const actionQueue: Action[] = [];
+  let actionQueue: Action[] = [];
 
   return () => (next) => (action) => {
     if (action.kind === "Meta") {
@@ -19,7 +19,7 @@ export function serverMirroringMiddleware<TSpec extends IApplicationSpec>(
         case metaActions.connected.type: {
           clientStore.onConnected();
           const actions = actionQueue;
-          actionQueue.length = 0;
+          actionQueue = [];
           clientStore.getConnection()?.send(
             metaActions.handshakeRequest({
               queuedActions: actions
